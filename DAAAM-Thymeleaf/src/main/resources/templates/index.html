@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Board Management</title>
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+.btn + .btn:not(.btn-block) {
+  margin: 0 0 0 5px;
+}
+.btn-info {
+  background: #5cc7dd;
+  border-color: #5cc7dd;
+  color: #ffffff;
+}
+.table {
+  margin: 0 0 15px;
+  position: relative;
+  -webkit-border-radius: 0 0 0 0;
+  -moz-border-radius: 0 0 0 0;
+  border-radius: 0 0 0 0;
+}
+.table.table-white {
+  background: #fff;
+}
+.table th,
+.table td {
+  border-top-color: #ebebeb;
+}
+</style>
+</head>
+<body>
+
+
+<div align="center">
+	<h1 class="text-info">Boards List</h1>
+	<br>
+	<a class="btn btn-info" th:href="@{/new_board}">Add Board</a><br>
+	<br> 
+	<table class="table table-white">
+		<thead>
+			<tr>
+				<th>Board Name</th>
+				<th>Board Stories</th>
+				<th>Board Status</th>
+				<th>Board Start Date</th>
+				<th>Board End Date</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr th:each="board : ${listBoards}">
+                <td th:text="${board.boardName}" ></td>
+                <td th:text="${board.boardStorie}" ></td>
+                <td th:text="${board.boardStatus}"> </td>
+                <td th:text="${board.startDate_board}" ></td>
+                <td th:text="${board.endDate_board}" ></td>
+                
+                
+            </tr>
+              
+		</tbody>
+		
+	</table>
+	</div>
+	</body>
+</html>
+
+
+
